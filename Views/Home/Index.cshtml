@@ -1,0 +1,54 @@
+﻿
+<style>
+    #dachiBox{
+        display: inline-block;
+        width: 400px;
+        height: 400px;
+        outline: 2px solid black;
+    }
+    .b{
+   left: 93px;
+    position: relative;
+    top: 45px;
+    }
+    img{
+            vertical-align: top;
+    display: inline-block;
+    position: relative;
+    left: 100px;
+    }
+    #msg{
+            margin-left: 81px;
+
+
+    }
+</style>
+<h1>DojoDachi</h1>
+<p><span>Fullness: @ViewBag.Fullness</span> <span>Happiness: @ViewBag.Happiness</span> <span>Meals: @ViewBag.Meals</span> <span>Energy: @ViewBag.Energy</span> </p>
+<div id="dachiBox">
+@if (!ViewBag.isDead && !ViewBag.won){
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ98svyy2TNQ6UHDTwFic1SOT_CPYPEie-K_7N3b2fetT-W8cgG">
+    <p id="msg">@ViewBag.Msg</p>
+
+<a href="/feed"><button class="b">Feed</button></a>
+<a href="/play"><button class="b">Play</button></a>
+<a href="/work"><button class="b">Work</button></a>
+<a href="/sleep"><button class="b">Sleep</button></a>
+}
+
+@if(ViewBag.won){
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ98svyy2TNQ6UHDTwFic1SOT_CPYPEie-K_7N3b2fetT-W8cgG">
+    <p id="msg">@ViewBag.Msg</p>
+    <a href="/restart"><button class="b">Restart</button></a>
+
+}
+@if(ViewBag.isDead){
+     <img src="">
+    <p id="msg">@ViewBag.Msg</p>
+    <a href="/restart"><button class="b">Restart</button></a>
+
+}
+    
+
+
+</div>
